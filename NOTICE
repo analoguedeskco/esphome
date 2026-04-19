@@ -1,0 +1,7 @@
+This project is licensed under the Apache License, Version 2.0.
+
+Third-party source files included in this repository are licensed separately:
+- SwitecX25.cpp: BSD 2-Clause License
+- SwitecX25.h: BSD 2-Clause License
+
+The original BSD-2 copyright and notice text is retained in those files.
