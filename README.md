@@ -2,6 +2,8 @@
 
 This repository contains the ESPHome firmware configuration for the Analogue Desk Co. `IDX-1` hardware project.
 
+> Learn more here: https://analoguedesk.co/products/idx-1
+
 The `IDX-1` is an open-architecture physical display device that maps digital data into a motor-driven gauge with RGB ambience.
 
 > This repo is linked from the official `IDX-1` user manual. See https://docs.analoguedesk.co
