@@ -11,10 +11,10 @@
 # limitations under the License.
 
 esphome:
-  name: idx1
-  friendly_name: "IDX-1"
+  name: idx2
+  friendly_name: "IDX-2"
   project:
-    name: "analoguedeskco.idx1-esphome"
+    name: "analoguedeskco.idx2-esphome"
     version: "1.0.0"
   includes:
     - esphome_extras.h
@@ -51,7 +51,7 @@ wifi:
   password: !secret wifi_password
   # Fallback AP if WiFi is unavailable
   ap:
-    ssid: "IDX-1 Setup"
+    ssid: "IDX_setup"
     password: ""
 
 captive_portal:
@@ -60,15 +60,15 @@ logger:
   level: INFO
 
 
-# WS2812B LEDs — 4 addressable RGB LEDs on GPIO8, controlled as one light entity
+# WS2812B LEDs — 6 addressable RGB LEDs on GPIO8, controlled as one light entity
 light:
   - platform: neopixelbus
     type: GRB
     variant: WS2812
     pin: GPIO8
-    num_leds: 4
+    num_leds: 6
     name: "LEDs"
-    id: idx1_leds
+    id: idx2_leds
     default_transition_length: 500ms
     restore_mode: RESTORE_DEFAULT_ON
 
@@ -84,13 +84,13 @@ number:
     set_action:
       - lambda: if (gauge) gauge->setPosition((int)(x / 100.0f * 945));
 
-# Button to switch back to IDX-1 custom firmware
+# Button to switch back to IDX-2 custom firmware
 button:
   - platform: template
     name: "Firmware Switch"
     icon: mdi:swap-horizontal
     on_press:
-      - logger.log: "Switching boot partition to ota_0 (IDX-1 firmware)..."
+      - logger.log: "Switching boot partition to ota_0 (IDX-2 firmware)..."
       - lambda: |-
           const esp_partition_t *p = esp_partition_find_first(
             ESP_PARTITION_TYPE_APP,

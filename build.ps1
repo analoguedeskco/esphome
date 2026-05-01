@@ -10,8 +10,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Build the IDX-1 ESPHome firmware using the official Docker image.
-# Output: .esphome/build/idx1/.pioenvs/idx1/firmware.bin
+# Build the IDX-2 ESPHome firmware using the official Docker image.
+# Output: .esphome/build/idx2/.pioenvs/idx2/firmware.bin
 #
 # Usage: .\build.ps1
 # Requires Docker Desktop to be running.
@@ -35,7 +35,7 @@ docker run --rm `
     -v "esphome-build:/config/.esphome" `
     -v "esphome-cache:/cache" `
     ghcr.io/esphome/esphome `
-    compile idx1.yaml
+    compile idx2.yaml
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Build failed."
@@ -50,7 +50,7 @@ docker run --rm `
     -v "esphome-build:/build" `
     -v "${OutputDir}:/output" `
     alpine `
-    cp /build/build/idx1/.pioenvs/idx1/firmware.bin /output/firmware.bin
+    cp /build/build/idx2/.pioenvs/idx2/firmware.bin /output/firmware.bin
 
 if ($LASTEXITCODE -ne 0) {
     Write-Error "Failed to extract firmware binary."
@@ -63,5 +63,5 @@ Write-Host "Build complete!" -ForegroundColor Green
 Write-Host "Binary : $OutputDir\firmware.bin"
 Write-Host "Size   : $Size KB"
 Write-Host ""
-Write-Host "Flash via the IDX-1 web UI:"
+Write-Host "Flash via the IDX-2 web UI:"
 Write-Host "  Advanced -> Flash ESPHome -> select esphome\output\firmware.bin"

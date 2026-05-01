@@ -1,16 +1,16 @@
-# IDX-1 ESPHome Firmware
+# IDX-2 ESPHome Firmware
 
-This repository contains the ESPHome firmware configuration for the Analogue Desk Co. `IDX-1` hardware project.
+This repository contains the ESPHome firmware configuration for the Analogue Desk Co. `IDX-2` hardware project.
 
-> Learn more here: https://analoguedesk.co/products/idx-1
+> Learn more here: https://analoguedesk.co/products/idx-2
 
-The `IDX-1` is an open-architecture physical display device that maps digital data into a motor-driven gauge with RGB ambience.
+The `IDX-2` is an open-architecture physical display device that maps digital data into a motor-driven gauge with RGB ambience.
 
-> This repo is linked from the official `IDX-1` user manual. See https://docs.analoguedesk.co
+> This repo is linked from the official `IDX-2` user manual. See https://docs.analoguedesk.co
 
 ## Repository contents
 
-- `idx1.yaml` — ESPHome project definition
+- `idx2.yaml` — ESPHome project definition
 - `esphome_extras.h` — additional ESPHome C++ helpers and task logic
 - `SwitecX25.h` / `SwitecX25.cpp` — stepper motor driver code
 - `secrets.example.yaml` — example Wi-Fi and OTA secrets file
@@ -26,7 +26,7 @@ The `IDX-1` is an open-architecture physical display device that maps digital da
    - On Windows PowerShell: `.uild.ps1`
    - On macOS/Linux: `./build.sh`
 4. The firmware binary will be written to `output/firmware.bin`.
-5. Flash the binary using the IDX-1 web UI or your normal ESPHome/OTA workflow.
+5. Flash the binary using the IDX-2 web UI or your normal ESPHome/OTA workflow.
 
 ## Secrets and credentials
 

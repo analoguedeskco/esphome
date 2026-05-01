@@ -11,8 +11,8 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 #
-# Build the IDX-1 ESPHome firmware using the official Docker image.
-# Output: .esphome/build/idx1/.pioenvs/idx1/firmware.bin
+# Build the IDX-2 ESPHome firmware using the official Docker image.
+# Output: .esphome/build/idx2/.pioenvs/idx2/firmware.bin
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
@@ -31,7 +31,7 @@ docker run --rm \
   -v "esphome-cache:/cache" \
   -v "esphome-build:/config/.esphome" \
   ghcr.io/esphome/esphome \
-  compile idx1.yaml
+  compile idx2.yaml
 
 mkdir -p "$SCRIPT_DIR/output"
 
@@ -40,7 +40,7 @@ docker run --rm \
   -v "esphome-build:/build" \
   -v "$SCRIPT_DIR/output:/output" \
   alpine \
-  cp /build/build/idx1/.pioenvs/idx1/firmware.bin /output/firmware.bin
+  cp /build/build/idx2/.pioenvs/idx2/firmware.bin /output/firmware.bin
 
 SIZE=$(wc -c < "$SCRIPT_DIR/output/firmware.bin")
 echo ""
@@ -48,5 +48,5 @@ echo "Build complete!"
 echo "Binary : $SCRIPT_DIR/output/firmware.bin"
 echo "Size   : $((SIZE / 1024)) KB"
 echo ""
-echo "Flash via the IDX-1 web UI:"
+echo "Flash via the IDX-2 web UI:"
 echo "  Advanced → Flash ESPHome → select esphome/output/firmware.bin"

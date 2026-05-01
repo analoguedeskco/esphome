@@ -23,7 +23,7 @@
 // leaves the pins unconfigured and causes the motor to shudder but not move.
 static SwitecX25* gauge = nullptr;
 
-// Matches the custom IDX-1 firmware acceleration profile (motor.cpp)
+// Matches the custom IDX-2 firmware acceleration profile (motor.cpp)
 static unsigned short slowAccelTable[][2] = {
   {  25, 12000},
   {  50,  6000},
